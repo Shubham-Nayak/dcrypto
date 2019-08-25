@@ -1,1 +1,1 @@
-web: gunicorn thefacts.wsgi --log-file -
+web: gunicorn DCrypto.wsgi --log-file -
