@@ -26,12 +26,12 @@ class DecryptForm(forms.Form):
     encText = forms.CharField(widget=forms.Textarea(attrs={
         'class': 'form-control ',
         'id': 'exampleFormControlTextarea1',
-        'rows': '5',
+        'rows': '2',
         'data-length': '5000',
     }))
     finder = forms.CharField(widget=forms.TextInput(attrs={
           'type': 'password ',
         'id': 'exampleInputPassword1',
         'class': 'form-control pass',
-        'placeholder':'Protect Data With Password.'
+        'placeholder':'Enter Secret Password'
     }))
