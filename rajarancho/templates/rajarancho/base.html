@@ -1,0 +1,318 @@
+{%load static%}<!doctype html>
+<html lang="en">
+
+{%block metatags%}{%endblock%}
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="The Fact's 24 is a news, analysis, opinion and knowledge venture,
+ launched in March 2015 by editor Shubham Singh Nayak.It is sharply focused on politics and policy,
+  government and governance.Our main gole is give factual data and news to our viewers.">
+
+  <meta name="keywords"
+    content="facts24.online,www.facts24.online,thefacts,fact,the fact,thefacts24 online,the facts 24,fact report,indian news,news,thehindu,theprint,the print,the wire,indianews,indianexpress,thefacts24,indian top news portal,indian news site,news,factchecker,fact check,facts,media,facts24,facts24 login,fact24 pricing">
+  <meta name="author" content="John Doe">
+  <meta name="robots" content="index, follow" />
+  <link rel=”canonical” href=”https://www.facts24.online/” />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+
+  <!-- Required mefonts awsome -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+  <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet">
+  {%block og%}
+  <!-- og seetings for share post on fb  -->
+  <meta property="og:url" content="http://www.facts24.online/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Facts's 24 " />
+  <meta property="og:description" content="It is sharply focused on politics and policy, government and governance Our main gole is give factual data and news to our viewers." />
+  <meta property="og:image" content="{%static 'thenation/images/index.png' %}" />
+
+  <!--twitter card-->
+  <meta name=”twitter:title” content="The Facts's 24 ">
+
+  <meta name=”twitter:description” content="It is sharply focused on politics and policy, government and governance Our main gole is give factual data and news to our viewers.">
+
+  <meta name=”twitter:image” content="{%static 'thenation/images/index.png' %}" >
+
+  <meta name=”twitter:site” content=”@Shubham19272731>
+
+  <meta name=”twitter:creator” content=”@Shubham19272731>
+  {%endblock%}
+  <title>{%block title%}Hello, world!{%endblock%}</title>
+  <!-- facebook api cdn -->
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>
+  <script type='text/javascript'
+    src='https://platform-api.sharethis.com/js/sharethis.js#property=5d3abe4faf24be0012385d05&product='
+    inline-share-buttons' async='async'></script>
+</head>
+{%load static%}
+{%block logo%}
+<link rel="shortcut icon" href="{%static 'thenation/images/logo1.png' %}">
+{%endblock%}
+{%block script%}<script></script>{%endblock%}
+{%block css%}{%endblock%}
+{% load static %}
+{%block csss%}
+<style>
+    body {
+      position: relative;
+      background-image: url('{% static "images/background.jpg"%}');
+      background-size:cover;
+      background-position: center;   
+      top:0;
+      bottom: 0;
+    }
+
+  .footer-distributed {
+    background-image: linear-gradient(to right top, #f2b21e, #f5992f, #f2823e, #e86d4c, #d95b58, #d75558, #d54f58, #d34858, #e1494c, #ec4c3e, #f5532b, #fb5d09);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+
+    padding: 45px 50px;
+    margin-top: 80px;
+  }
+
+  .footer-distributed .footer-left p {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  /* Footer links */
+
+  .footer-distributed p.footer-links {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+  }
+
+  .footer-distributed p.footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .footer-distributed .footer-right {
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+  }
+
+  .footer-distributed .footer-right a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #33383b;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-left: 3px;
+  }
+
+  .pagination {
+    text-align: center;
+
+  }
+
+  a {
+    color: green
+  }
+
+  .current {
+    color: green;
+    font-weight: 100px;
+
+
+
+    font-size: 15px;
+  }
+
+  .page-link {
+
+    padding: 15px 25px;
+  }
+
+  .previous {
+    color: white;
+    background-color: rgba(255, 0, 0, 0.6);
+    border-bottom-left-radius: 55px;
+    border-top-left-radius: 55px;
+  }
+
+  .previous:hover {
+    background-color: #CC0033;
+    color: #fff;
+  }
+
+  .next {
+    background-color: rgba(0, 204, 0, 0.7);
+    color: white;
+    border-bottom-right-radius: 55px;
+    border-top-right-radius: 55px;
+  }
+
+  .next:hover {
+    background-color: rgba(0, 153, 51, 1);
+    color: white;
+  }
+
+  .nav-link {
+    font-size: 22px;
+
+  }
+  
+  /* If you don't want the footer to be responsive, remove these media queries */
+
+  @media (max-width: 600px) {
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-right {
+      text-align: center;
+    }
+
+    .footer-distributed .footer-right {
+      float: none;
+      margin: 0 auto 20px;
+    }
+
+    .footer-distributed .footer-left p.footer-links {
+      line-height: 1.8;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .title {
+      position: relative;
+      margin-left: 80px;
+
+    }
+
+    .trending,
+    h1 {
+
+      font-size: 22px;
+
+    }
+
+
+  }
+</style>
+
+{%endblock%}
+
+<body>
+        <section class="main-body mb-5">
+                <div>
+                  <nav class="navbar navbar-expand-lg navbar-dark mb-2 "
+                    style="background-color: rgba(0,51,153,0.3);">
+                    <a class="navbar-brand animation bounceIn title" href="#"><span style="font-size: 30px;font-family:  bold">
+                        R</span>aja<span style="font-size: 30px;font-family:  bold"> R</span>ancho <span
+                        style="font-size: 30px;font-family:  bold">Security</span></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+            
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="/thenation/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/thenation/about">About</a>
+                        </li>
+            
+                        <li class="nav-item">
+                          <a class="nav-link" href="/thenation/contact">contact us</a>
+                        </li>
+                       
+            
+                      </ul>
+            
+                      <!--<form class="form-inline my-2 my-lg-0">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                  </form>-->
+            
+            
+            
+                    </div>
+            
+                  </nav>
+            
+                </div>
+
+
+{% if messages %}
+<div class="alert alert-success" role="alert" style="text-align:center;">
+        {% for message in messages %}
+        <p>{{message}}</p>
+    {% endfor %}
+      </div>
+
+      {% else %}
+
+      <br>
+      {% endif %}
+
+<!-- {% if messages %}
+<div class="row" id="alert_box">
+    <div class="col s12 m12">
+        <div class="card green darken-0">
+        <div class="row">
+            <div class="col s12 m10">
+            <div class="card-content white-text">
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col s12 m2">
+            <i class="fa fa-times icon_style" id="alert_close" aria-hidden="true"></i>
+        </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% else %}
+
+<br>
+{% endif %} -->
+
+
+{% block body %}
+{% endblock%}
+<br><br>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="{% static '/js/script.js' %}"></script>
+</body>
+</html>

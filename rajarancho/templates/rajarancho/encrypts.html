@@ -1,0 +1,136 @@
+
+{%extends 'rajarancho/basic.html'%}
+{%load static%}
+
+{%block title%}The Fact's 24 {%endblock%}
+{%block css%}<style>
+        body {
+            position: relative;
+            background-image: url('{% static "images/background.jpg"%}');
+            background-size:cover;
+            background-position: center;   
+            top:0;
+            bottom: 0;
+              
+
+  }
+
+  .color-overlay{
+    width: 100%;
+  left: 0;
+    background-color: red;
+    opacity: 0.9;
+    position: relative;
+    top:0;
+    bottom: 0;
+    z-index: 1;
+ 
+
+  }
+  .card{
+      display: flex;
+      width: 650px;
+      justify-content: center;
+      border-radius: 10px;
+      box-shadow: 1px 1px  20px 1px gray;
+      z-index: 1;
+      
+
+      
+  }
+  .card:hover{
+    box-shadow: 1px 1px  20px 1px gold;
+
+  }
+  .card-img-top{
+      width: cover;
+      height: 150px;
+      border-radius: 10px;
+      
+  }
+  .encryptBtn{
+    margin-right: 15px;
+    box-shadow: #b3b3b3 10px 10px 50px;
+    float: left;
+}
+.decryptBtn{
+    margin-left: 15px;
+    box-shadow: #b3b3b3 10px 10px 50px;
+    float: right;
+}
+.encryptBtn:hover{
+    margin-right: 15px;
+    box-shadow: #b3b3b3 10px 10px 80px;
+}
+.decryptBtn:hover{
+    margin-left: 15px;
+    box-shadow: #b3b3b3 10px 10px 80px;
+}
+</style>{%endblock%}
+{%load static%}
+{%block body%}
+<body>
+
+
+        <div class="container">
+                <div class="row">
+                    <form class="col s12" action="/encrypt/" method="POST">    {% csrf_token %}
+                      <div class="form-group ">
+                          <label for="exampleFormControlTextarea1">Enter Your Message</label>
+                          {{ form.decText }}
+                        </div>
+                        <div class="form-group ">
+                            <label for="exampleInputPassword1">Password</label>
+                            {{ form.finder }}
+                          </div>  
+                          <input type="hidden" name="device_width"  id="device_width">
+                          <button type="submit" class="btn green btn-small"><i class="material-icons white-text left">lock</i>Encrypt</button>
+                          <button class="btn red btn-small right"><i class="material-icons white-text left ">cancel</i>Cancel</button>
+                      </form>
+            
+            </div>
+            </div>
+            
+
+
+
+
+
+  {%endblock%}
+
+
+  {%block js%}
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml15 .word',
+        scale: [14, 1],
+        opacity: [0, 1],
+        easing: "easeOutCirc",
+        duration: 800,
+        delay: function (el, i) {
+          return 800 * i;
+        }
+      }).add({
+        targets: '.ml15',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
+  {%endblock%}

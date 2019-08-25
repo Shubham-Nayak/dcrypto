@@ -1,0 +1,90 @@
+{% extends 'rajarancho/basic.html' %}
+{%load static%}
+{% block title %}
+ | Encrypted
+{% endblock %}
+{%block css%}
+<style>
+    .card{
+      display: flex;
+      width: 650px;
+      justify-content: center;
+      border-radius: 10px;
+      box-shadow: 1px 1px  20px 1px gray;
+      z-index: 1;
+      
+
+      
+  }
+  .card:hover{
+    box-shadow: 1px 1px  20px 1px gold;
+
+  }
+  .card-img-top{
+      width: cover;
+      height: 150px;
+      border-radius: 10px;
+      
+  }
+  .logbut{
+    background-color: rgba(0,0,153,0.5);
+    color: aliceblue;
+  }
+  .logbut:hover{
+    background-color:rgba(102,255,51,0.7);
+    color: aliceblue;
+  
+  }
+
+</style>
+{%endblock%}
+{% block extra_head %}
+    <style>
+    
+    </style>
+{% endblock %}
+{%block script%}<script>
+    function myFunction() {
+      /* Get the text field */
+      var copyText = document.getElementById("myInput");
+    
+      /* Select the text field */
+      copyText.select(); 
+      copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+    
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+    
+      /* Alert the copied text */
+      alert("Copied the text: " + copyText.value);
+    }
+</script>{%endblock%}
+{% block body %}
+
+<div class="container">
+  <div class="body-cont  row justify-content-center mt-5">
+      <div class="card mb-3 ">
+          <img class="card-img-top" src="{% static 'images/crypt.jpg' %}" alt="Card image cap">
+          <div class="card-body"> 
+    {% if result %}
+  <!-- The text field -->
+
+<div class="input-group mb-3">
+    <input type="text" value="{{result}}" id="myInput" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" onclick="myFunction()" style="color:white;background-color:darkgreen;">Copy Key</button>
+    </div>
+  </div>
+<!-- The button used to copy the text -->
+
+{% endif %}
+</div>
+</div>
+</div>
+<button type="button" class="btn btn-primary btn-lg btn-block logbut"  ><a href="/decrypt/" style="color:white;">Decrypt Your Message</a></button>
+</div>
+
+
+
+
+{% endblock %}

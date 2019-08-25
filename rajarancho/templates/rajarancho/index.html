@@ -1,0 +1,193 @@
+
+{%extends 'rajarancho/basic.html'%}
+{%load static%}
+
+{%block title%}The Fact's 24 {%endblock%}
+{%block css%}<style>
+        body {
+            position: relative;
+            background-image: url('{% static "images/background.jpg"%}');
+            background-size:cover;
+            background-position: center;   
+            top:0;
+            bottom: 0;
+              
+
+  }
+
+  .color-overlay{
+    width: 100%;
+  left: 0;
+    background-color: red;
+    opacity: 0.9;
+    position: relative;
+    top:0;
+    bottom: 0;
+    z-index: 1;
+ 
+
+  }
+  .card{
+      display: flex;
+      width: 650px;
+      justify-content: center;
+      border-radius: 10px;
+      box-shadow: 1px 1px  20px 1px gray;
+      z-index: 1;
+      
+      
+  }
+  .card:hover{
+    box-shadow: 1px 1px  20px 1px gold;
+
+  }
+  .card-img-top{
+      width: cover;
+      height: 150px;
+      border-radius: 10px;
+      
+  }
+  .encryptBtn{
+    margin-right: 15px;
+    box-shadow: #b3b3b3 10px 10px 50px;
+    float: left;
+}
+.decryptBtn{
+    margin-left: 15px;
+    box-shadow: #b3b3b3 10px 10px 50px;
+    float: right;
+}
+.encryptBtn:hover{
+    margin-right: 15px;
+    box-shadow: #b3b3b3 10px 10px 80px;
+}
+.decryptBtn:hover{
+    margin-left: 15px;
+    box-shadow: #b3b3b3 10px 10px 80px;
+}
+.container-fluid {
+  content: "";
+  margin-top:30px; 
+  background-color:rgba(0,51,204,0.4);
+  width: 100%;
+  bottom: 0;
+  
+
+}
+.cards{
+  box-shadow: none;
+  
+}
+.cards:hover{
+  box-shadow: none;
+  
+}
+</style>{%endblock%}
+{%load static%}
+{%block body%}
+<body>
+
+<div class="container ">
+  
+    <h1  style="color: aliceblue;text-align:center;margin-bottom:0;top:0;">Django Cryptography Project</h1>
+    <div class="body-cont  row justify-content-center mt-5">
+    
+    <div class="card mb-3 ">
+            <img class="card-img-top" src="{% static 'images/crypt.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text" style="">You Can Encrypt/Decrypt Message Hear And Send Inforamtaion Securely With Ant One Your Data Is Safe No Third Party Can See Aor Read Your Message Without Password(Secrate Key)..</p>
+  
+              <a href="/encrypt" class="btn-large green encryptBtn">
+                <button type="submit" class="btn btn-success "style="float:left;"><i class="material-icons white-text left">lock</i>Encrypt</button>
+            </a>
+            <a href="/decrypt" class="btn-large red decryptBtn">
+              <button type="submit" class="btn btn-danger "style="float:left;"><i class="material-icons white-text left">lock</i>Decrypt</button>
+            </a>
+            </div>
+          </div>
+          </div>
+         
+          </div>
+</div>
+<div class="container-fluid ">
+  <div class="body row justify-content-center">
+      
+      <div class="card  text-white bg-primary mb-3 mx-2 cards" style="max-width: 20rem;">
+          <div class="card-header">Cryptography</div>
+          <div class="card-body">
+            <h5 class="card-title">What Is Cryptography</h5>
+            <p class="card-text">In computer science, cryptography refers to secure information and communication techniques derived from mathematical concepts and a set of rule-based calculations called algorithms to transform messages in ways that are hard to decipher. These deterministic algorithms are used for cryptographic key generation and digital signing and verification to protect data privacy, web browsing on the internet and confidential communications such as credit card transactions and email.</p>
+          </div>
+        
+      </div> 
+        <div class="card text-white bg-secondary mb-3 mx-2 cards" style="max-width: 20rem;">
+          <div class="card-header">Encryption</div>
+          <div class="card-body">
+            <h5 class="card-title">What Is Encryption</h5>
+            <p class="card-text">Encryption is widely used on the internet to protect user information being sent between a browser and a server, including passwords, payment information and other personal information that should be considered private. Organizations and individuals also commonly use encryption to protect sensitive data stored on computers, servers and mobile devices like phones or tablets.</p>
+          </div>
+        </div>
+        <div class="card text-white bg-success mx-2 mb-3 cards" style="max-width: 20rem;">
+            <div class="card-header">Decryption</div>
+            <div class="card-body">
+              <h5 class="card-title">What Is Decryption</h5>
+              <p class="card-text">
+                  Definition - What does Decryption mean?
+                  Decryption is the process of transforming data that has been rendered unreadable through encryption back to its unencrypted form. In decryption, the system extracts and converts the garbled data and transforms it to texts and images that are easily understandable not only by the reader but also by the system. Decryption may be accomplished manually or automatically. It may also be performed with a set of keys or passwords.</p>
+            </div>
+          </div>
+</div>
+</div>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+  {%endblock%}
+
+
+  {%block js%}
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml15 .word',
+        scale: [14, 1],
+        opacity: [0, 1],
+        easing: "easeOutCirc",
+        duration: 800,
+        delay: function (el, i) {
+          return 800 * i;
+        }
+      }).add({
+        targets: '.ml15',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
+  {%endblock%}
