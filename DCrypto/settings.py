@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rajarancho',
     'accounts',
-    #'storages',
+    'storages',
 ]
 
 MIDDLEWARE = [
